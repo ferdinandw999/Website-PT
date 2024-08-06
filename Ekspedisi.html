@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Bersama Group Ekspedisi Palembang</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px;
+			background-color: #0d2e57; /* Darker blu color */
+			color: #fff;
+		}
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #0d2e57;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            margin: 10px;
+            width: 300px;
+            height: auto;
+        }
+        .video {
+            text-align: center;
+        }
+        #mitra {
+            background-color: #FFFFFF;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .partners {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .partners img {
+            margin: 10px;
+            width: 120px;
+        }
+        footer {
+            background-color: #0d2e57;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+		.contact-info {
+			margin-top: 10px;
+			font-size: 16px;
+			border: 2px solid #007bff; /* Add border */
+			border-radius: 5px; /* Add border radius */
+			padding: 10px; /* Add padding */
+			background-color: #f8f9fa; /* Add background color */
+			color: #000; /* Set text color to black */
+		}
+
+		.contact-info i {
+			margin-right: 5px;
+		}
+
+		.contact-info p {
+			margin-bottom: 10px; /* Add margin bottom for better spacing */
+		}
+
+		.contact-info a {
+			display: inline-block;
+			text-decoration: none;
+			color: #007bff; /* Change link color to blue */
+			font-size: 16px;
+			transition: color 0.3s ease; /* Add color transition */
+		}
+
+		.contact-info a:hover {
+			color: #0056b3; /* Change text color to a darker blue on hover */
+		}
+
+        .slideshow-container {
+            position: relative;
+            max-width: 800px; /* Set the maximum width of the slideshow */
+            margin: auto;
+        }
+        .mySlides img {
+            width: 50%; /* Set the width to 50% to occupy only half of the screen */
+            height: auto;
+		}
+        .mySlides {
+            display: none; /* Hide all slides by default */
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s; /* Adjust the duration of the fade animation */
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation arrows */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+		
+		.slider-icons {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			margin-left: 20px;
+			z-index: 1000;
+		}
+
+		.slider-icons a {
+			display: block;
+			text-decoration: none;
+			color: #fff;
+			margin-bottom: 5px;
+			font-size: 16px;
+			padding: 8px 15px;
+			border-radius: 3px;
+			background-color: rgba(0, 123, 255, 0.1);
+			transition: background-color 0.3s ease;
+		}
+
+		.slider-icons a:hover {
+			background-color: rgba(0, 123, 255, 0.3);
+		}
+
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            padding: 10px;
+            border-radius: 20px; /* Adjust border-radius to make it squircle */
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 150px; /* Adjust width as needed */
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1), 0 0 0 6px rgba(0, 0, 0, 0.1); /* Add squircle effect */
+            transition: box-shadow 0.3s ease; /* Add smooth transition */
+        }
+
+        .whatsapp-chat img {
+            width: 30px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .whatsapp-chat:hover {
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2), 0 0 0 6px rgba(0, 0, 0, 0.2); /* Adjust shadow on hover */
+            background-color: #128c7e;
+        }
+		.flex-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.flex-item {
+			flex: 1;
+			margin-right: 10px;
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		.flex-item:last-child {
+			margin-right: 0;
+		}
+
+		.flex-item h3 {
+			margin-top: 0;
+		}
+
+		.flex-item ul {
+			padding-left: 20px;
+		}
+
+		.flex-item ul li {
+			margin-bottom: 10px;
+		}
+		.heading-container {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+			padding: 15px; /* Add padding for spacing inside the box */
+			background-color: #f2f2f2; /* Add background color */
+			border-radius: 5px; /* Add border radius for rounded corners */
+			border: 1px solid #ccc; /* Add border */
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+		}
+		/* Additional style for the header area */
+		.logo-container {
+			padding: 40px;
+			background-color: #fff;
+			border-radius: 5px;
+		}
+
+		header .logo {
+			display: flex;
+			align-items: center;
+		}
+
+		header .logo img {
+			width: 110px;
+			height: auto;
+			margin-right: 10px;
+		}
+
+		header .title {
+			margin: 0;
+			font-size: 23px;
+			font-weight: bold;
+			color: #000; /* Text color */
+		}
+
+		header .subtitle {
+			margin: 0;
+			font-size: 15px;
+			font-weight: bold;
+			color: #000; /* Text color */
+		}
+		.slideshow {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+		.kontainer-utama {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 50vh;
+			padding: 20px;
+		}
+
+		.kontainer-utama h1 {
+			margin-bottom: 20px;
+			color: #007bff; /* Warna Teks Judul */
+		}
+
+		.kontainer-utama p {
+			color: #6c757d; /* Warna Teks Isi */
+		}
+
+		.kontainer-bisnis {
+			max-width: 600px;
+			padding: 20px;
+			background-color: #fff; /* Warna Latar Kontainer */
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.2); /* Add more shadow effect */
+			margin-top: 20px;
+		}
+
+
+		.judul-bisnis {
+			text-align: center;
+			margin-bottom: 20px;
+			color: #0d2e57; /* Warna Teks Judul */
+		}
+
+		.daftar-bisnis {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.item-bisnis {
+			margin-bottom: 20px;
+		}
+
+		.item-bisnis span {
+			font-weight: bold;
+			color: #28a745; /* Warna Teks Jam Operasional */
+		}
+
+		.footer {
+			text-align: center;
+			margin-top: 20px;
+			color: #6c757d; /* Warna Teks Footer */
+		}
+		.phone-number {
+			font-family: Arial, sans-serif; /* Change font family */
+			font-size: 16px; /* Adjust font size */
+			color: #000; /* Change text color */
+			text-decoration: none; /* Remove underline */
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+
+		.image-container {
+			position: relative;
+			display: inline-block;
+			overflow: hidden; /* Ensure image stretches horizontally */
+			width: 160%;
+		}
+
+		.image-container img {
+			width: 100%; /* Stretch image horizontally */
+			height: auto; /* Maintain aspect ratio */
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent dark background */
+			border-radius: 10px;
+			border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased intensity of shadow effect */
+			cursor: pointer; /* Show pointer cursor on hover to indicate pressability */
+			transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; /* Add transition effect for smooth interaction */
+		}
+
+		.overlay:hover {
+			transform: scale(0.95); /* Increased scale effect on hover */
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adjusted shadow effect on hover */
+			background-color: rgba(0, 0, 0, 0.2); /* Adjusted background color on hover */
+		}
+
+		.motto {
+			font-family: 'Georgia', serif;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+			font-size: 50px;
+			font-weight: bold;
+			border-radius: 10px;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo" onclick="refreshPage()">
+                <img src="jbg.jpg" alt="JBG Logo" style="width: 110px; height: auto; margin-right: 10px;">
+                <div>
+                    <h1 class="title">PT. Jaya Bersama Group</h1>
+                    <p class="subtitle">Coal Hauling dan Contractor</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-icons">
+            <a href="#galeri"><u><i class="bi bi-images"></i> Galeri</u></a>
+            <a href="#Spesifikasi Umum"><u><i class="bi bi-info-circle"></i> Spesifikasi Umum</u></a>
+            <a href="#kontak"><u><i class="bi bi-telephone"></i> Kontak Kami</u></a>
+            <a href="#tentang-kami"><u><i class="bi bi-info"></i> Tentang Kami</u></a>
+            <a href="index.html"><u>JBH Karoseri dan Ekspedisi</u></a>
+        </div>
+        <div class="contact-info">
+            <p><i class="fa fa-envelope"></i> <a href="mailto:jb_group78@yahoo.com">jb_group78@yahoo.com</a></p>
+            <p><i class="fa fa-phone"></i> <a href="tel:+6282178899576" class="phone-number">0821-7889-9576</a></p>
+        </div>
+    </header>
+	
+	<a href="https://wa.me/6282178899576" class="whatsapp-chat" target="_blank">
+		<img src="whatsapp_logo.png" alt="WhatsApp Logo" style="width: 55px;"> <!-- Adjust the width as needed -->
+		Chat via WhatsApp
+	</a>
+
+	<section id="layanan">
+		<div class="heading-container">
+			<h2>Layanan Kami</h2>
+		</div>
+		<div class="slideshow">
+			<img src="BACKGROUND.PNG" style="width: 100%; height: auto; display: block; margin: 0 auto;" id="slideshow-img">
+		</div>
+		<br>
+		<div style="display: flex; flex-wrap: wrap;">
+			<div class="flex-container">
+				<div class="flex-item">
+					<h3>Coal Hauling:</h3>
+					<ul>
+						<li>Spesialisasi dalam mengangkut <strong>batu bara</strong> di <strong>Kabupaten Muratara, Sumatera Selatan.</strong></li>
+						<li><strong>PT Jaya Bersama Group</strong> memiliki armada puluhan dump truck untuk mengangkut batu bara.</li>
+						<li>Kami melakukan <strong>satu</strong> sampai <strong>dua ritasi</strong> per hari per dump truck untuk memastikan pengiriman batu bara yang cepat, aman dan efisien.</li>
+					</ul>
+				</div>
+				<div class="flex-item">
+					<h3>Contractor:</h3>
+					<ul>
+						<li>Kami menawarkan <strong>layanan kontraktor berkualitas tinggi</strong> untuk proyek-proyek konstruksi, seperti dalam proses produksi dan pengangkutan slab beton.</li>
+						<li>Dengan tim yang <strong>terampil dan pengalaman yang luas</strong>, kami dapat menghasilkan hasil kerja yang berkualitas dan memenuhi standar yang diharapkan.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<br>
+		<!-- Pindahkan iframe ke luar dari flex dan tambahkan gaya CSS untuk lebar -->
+		<div style="width: 100%; overflow: hidden;">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4077203.1375335134!2d101.07392152079639!3d-3.6683379380742003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e303d984c7bcc8b%3A0x19ac31b80876ecad!2sSite%20PT.%20GORBY%20ENERGY!5e0!3m2!1sen!2sid!4v1712197996871!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</section>
+
+	<section id="image-section">
+		<div class="container">
+			<h2></h2>
+			<div class="image-container">
+				<img src="MOTTO.jpg" alt="Hauling Sopir">
+				<div class="overlay"></div>
+				<div class="motto">
+					<div>" Response,</div>
+					<br>
+					<div>Respect,</div>
+					<br>
+					<div>Responsibility "</div>
+				</div>
+				<br>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="galeri">
+	    <div class="heading-container">
+			<h2>Galeri</h2>
+		</div>
+		<div style="display: flex; flex-wrap: wrap;">
+			<div style="flex: 1; margin-right: 10px;">
+				<!-- Video Ekspedisi -->
+				<video width="100%" height="auto" controls style="margin-bottom: 10px;">
+					<source src="Ekspedisi_Video.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<!-- End Video Ekspedisi -->
+				<img src="Ekspedisi2.jpg" style="width: 100%; height: auto; margin-bottom: 10px;">
+				<!-- New image added below Ekspedisi2 -->
+				<img src="HaulingArmada.jpg" style="width: 100%; height: auto; margin-bottom: 10px;">
+			</div>
+			<div style="flex: 1; margin-left: 10px; margin-right: 10px;">
+				<!-- Video Hauling -->
+				<video height="auto" width="100%" controls style="max-width: 100%; margin-bottom: 10px;">
+					<source src="Hauling_Video.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<!-- End Video Hauling -->
+				<!-- New image added below Hauling_Video -->
+				<img src="Hauling1.jpg" style="width: 100%; height: auto; margin-bottom: 10px;">
+			</div>
+			<div style="flex: 1; margin-right: 10px;">
+				<div class="mySlides fade" style="margin-bottom: 10px;">
+					<img src="HaulingSopir.jpg" alt="Gambar 2" style="width: 100%; height: auto;">
+				</div>
+				<div class="mySlides fade" style="margin-bottom: 10px;">
+					<img src="HaulingIsuzu.jpg" alt="Gambar 3" style="width: 100%; height: auto;">
+				</div>
+				<img src="Hauling2.jpg" style="width: 100%; height: auto; margin-bottom: 10px;">
+				<img src="Ekspedisi3.jpg" style="width: 100%; height: auto; margin-bottom: 10px;">
+			</div>
+		</div>
+	</section>
+
+
+
+    </section>
+
+    <section id="Spesifikasi Umum">
+	    <div class="heading-container">
+			<h2>Spesifikasi Umum</h2>
+		</div>
+        <!-- Add spesifikasi content here -->
+    </section>
+
+    <section class="video">
+        <!-- Your video iframe here -->
+    </section>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 8000); // Change image every 5 seconds
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    </script>
+
+	<script>
+		// List of image URLs
+		var images = ["BACKGROUND.PNG", "BACKGROUND2.JPG"];
+		var currentIndex = 0;
+
+		// Function to change the image
+		function changeImage() {
+			// Increment the index
+			currentIndex++;
+			// If index is out of bounds, loop back to the beginning
+			if (currentIndex >= images.length) {
+				currentIndex = 0;
+			}
+			// Get the image element
+			var img = document.getElementById('slideshow-img');
+			// Change the image source
+			img.src = images[currentIndex];
+		}
+
+		// Automatically change the image every 3 seconds
+		setInterval(changeImage, 3000);
+	</script>
+
+    <script>
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
+	
+    <section id="kontak">
+	    <div class="heading-container">
+			<h2>Kontak Kami</h2>
+		</div>
+		<tt><p><super>Jika Anda memiliki pertanyaan atau permintaan, jangan ragu untuk menghubungi kami:</super></p></tt>
+		<br>
+		<div style="display: flex; align-items: center;">
+			<img src="small_image.png" alt="Small Image" style="width: 50px; height: auto; margin-left: 40px; margin-right: 10px;">
+			<a href="https://wa.me/6282178899576">082178899576</a>
+		</div>
+		<br>
+	    <p><tt>Atau email kami di:</tt></p>
+		<form action="mailto:jb_group78@yahoo.com" method="post" enctype="text/plain" target="_blank">
+			<label for="nama">Nama:</label><br>
+			<input type="text" id="nama" name="nama" required><br>
+			<label for="email">Email:</label><br>
+			<input type="email" id="email" name="email" required><br>
+			<label for="pesan">Pesan:</label><br>
+			<textarea id="pesan" name="pesan" required></textarea><br><br>
+			<input type="submit" value="Kirim">
+		</form>
+
+		<h3>Kunjungi kami juga di:</h3>
+		<ul>
+			<li><img src="Youtube_logo.png" alt="YouTube Icon" style="width: 50px; height: 40px; margin-right: 10px;"><a href="https://www.youtube.com/CHANNEL_ID">YouTube</a></li>
+			<li><img src="Instagram_logo.png" alt="Instagram Icon" style="width: 40px; height: 40px; margin-right: 10px;"><a href="https://www.instagram.com/ptjayabersama/">Instagram: @ptjayabersama</a></li>
+			<li><img src="Facebook_logo.png" alt="Facebook Icon" style="width: 40px; height: 40px; margin-right: 10px;"><a href="https://www.facebook.com/">Facebook</a></li>
+			<li><img src="tiktok_icon.png" alt="TikTok Icon" style="width: 20px; height: 20px; margin-right: 10px;"><a href="https://www.tiktok.com/">TikTok</a></li>
+		</ul>
+		<h3>Alamat kami:</h3>
+		<p>Jl. Ki Kemas Rindo, Pipa Putih, Kec. Pemulutan, Kabupaten Ogan Ilir, Sumatera Selatan 30967</p>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d498.02205915878034!2d104.77751645599325!3d-3.047354052422688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9c406f46ec0b%3A0xdb6d99ac3439c7d!2sPT%20JAYA%20BERSAMA%20GROUP!5e0!3m2!1sen!2sid!4v1711005626273!5m2!1sen!2sid" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<div class="kontainer-utama">
+			<!-- Bagian Jam Operasional -->
+			<div class="kontainer-bisnis">
+				<h2> --------------------------------------------------------------------------- </h2>
+				<h2 class="judul-bisnis">Jam Operasional Kantor</h2>
+				<ul class="daftar-bisnis">
+					<li class="item-bisnis">Senin: <span>08:00 - 17:00</span></li>
+					<li class="item-bisnis">Selasa: <span>08:00 - 17:00</span></li>
+					<li class="item-bisnis">Rabu: <span>08:00 - 17:00</span></li>
+					<li class="item-bisnis">Kamis: <span>08:00 - 17:00</span></li>
+					<li class="item-bisnis">Jumat: <span>08:00 - 17:00</span></li>
+					<li class="item-bisnis">Sabtu: <span>08:00 - 17:00</span></li>
+					<li class="item-bisnis">Minggu: <span>Tutup</span></li>
+				</ul>
+				<p class="footer">© 2024 Jaya Bersama Group Coal Hauling dan Contractor</p>
+				<h2> --------------------------------------------------------------------------- </h2>
+			</div>
+		</div>
+	</section>
+
+
+	<style>
+		/* Style for the container of the sections */
+		.section-container {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px; /* Add some margin at the bottom */
+		}
+
+		/* Style for each section */
+		.section {
+			width: 48%; /* Set the width of each section */
+			padding: 20px; /* Add some padding for spacing */
+			border: 1px solid #ccc; /* Add a border for visual separation */
+			box-sizing: border-box; /* Include padding and border in width calculation */
+		}
+	</style>
+
+	<section id="tentang-kami">
+	<style>
+		/* Center the content */
+		.centered-content {
+			text-align: center;
+		}
+
+		/* Make the logo bigger */
+		.logo {
+			width: 325px; /* Adjust the width as needed */
+			height: auto;
+			margin: 0 auto; /* Center the logo horizontally */
+			display: block; /* Ensure the logo is displayed as a block element */
+		}
+	</style>
+
+	<div class="centered-content">
+	    <div class="heading-container">
+			<h2>Tentang Kami</h2>
+		</div>
+		<img src="jbg.jpg" alt="JBG Logo" class="logo">
+		<br>
+		<br>
+		<p><strong>Jaya Bersama Group Coal Hauling dan Contractor </strong> adalah pilihan utama untuk kebutuhan Coal Hauling dan kontraktor di Palembang, Sumatera Selatan.</p>
+		<p>Keunggulan kami terletak pada kemampuan <strong>manajemen yang kuat</strong>, memastikan layanan yang andal dan berkualitas.</p>
+		<p>Dengan pengalaman yang luas dan keterampilan manajemen yang solid, kami memastikan pengiriman yang <strong>tepat waktu, efisien, dan sesuai standar.</strong></p>
+		<br>
+		<br>
+	</div>
+
+	</section>
+	<div class="section-container">
+		<!-- Visi section -->
+		<div class="section">
+			<h3>Visi:</h3>
+			<p>Menjadi perusahaan perdagangan kendaraan terbaik dan paling tepercaya di Indonesia.</p>
+		</div>
+
+		<!-- Misi section -->
+		<div class="section">
+			<h3>Misi:</h3>
+			<ol>
+				<li>Menghasilkan produk berkualitas & memberikan layanan purna jual yang baik.</li>
+				<li>Mengembangkan sumber daya manusia secara profesional dan berkelanjutan.</li>
+				<li>Memberikan kontribusi kepada masyarakat.</li>
+			</ol>
+		</div>
+	</div>
+	</section>   
+	
+	<section id="mitra">
+	    <div class="heading-container">
+			<h2>Mitra Kami</h2>
+		</div>
+		<div class="partners">
+			<marquee><img src="Isuzu-Logo.png" alt="Isuzu Logo" style="width: 120px;">
+			<img src="Mitsubishi-Logo.png" alt="Mitsubishi Logo" style="width: 120px;">
+			<img src="Hino-Logo.jpeg" alt="Hino Logo" style="width: 120px;"></marquee>
+			<!-- Add more partner logos -->
+		</div>
+	</section>
+	
+    <footer>
+        <p>&copy; 2024 Jaya Bersama Group Coal Hauling dan Contractor | Hak cipta dilindungi undang-undang
